@@ -22,18 +22,13 @@ npm run build / npm run prod
 
 ```sh
 ng g cl my-new-class #新建 class
-
 ng g c my-new-component #新建组件
-
 ng g d my-new-directive #新建指令
-
 ng g e my-new-enum #新建枚举
-
 ng g m my-new-module #新建模块
-
 ng g p my-new-pipe #新建管道
-
 ng g s my-new-service #新建服务
+ng g m route --route #新建 route
 ```
 
 > 说明：
@@ -47,6 +42,12 @@ ng g s my-new-service #新建服务
 > - s - service
 
 ## 备注
+
+### 不生成单元测试文件
+
+```sh
+ --spec=falses
+```
 
 ### 设置默认样式
 

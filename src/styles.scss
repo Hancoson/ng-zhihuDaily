@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-$bg:#333;
-body {
-  background: $bg
+//@import './node_modules/ng-zorro-antd/src/ng-zorro-antd.css'
+@import "~element-angular/theme/index.css";
+* {
+  padding: 0;
+  margin: 0
+}
+
+.main {
+  position: relative;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
 }
