@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  values: string;
+  constructor() {
+    this.values = ''
+  }
 
   ngOnInit() {
+  }
+  onKey(event: any) {
+    this.values = event.target.value;
   }
 
 }
