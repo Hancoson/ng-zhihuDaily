@@ -12,4 +12,8 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  handle(index: string): void {
+    console.log(index)
+  }
+
 }

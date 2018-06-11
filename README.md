@@ -28,7 +28,7 @@ ng g e my-new-enum #新建枚举
 ng g m my-new-module #新建模块
 ng g p my-new-pipe #新建管道
 ng g s my-new-service #新建服务
-ng g m route --route #新建 route
+ng g m route --routing #新建 route
 ```
 
 > 说明：
