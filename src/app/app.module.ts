@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { ElModule } from 'element-angular';
 
+import { HttpModule, JsonpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -22,6 +24,8 @@ import { ItemsComponent } from './components/items/items.component';
   ],
   imports: [
     appRoutes,
+    HttpModule,
+    JsonpModule,
     BrowserModule,
     ElModule.forRoot(),
   ],
