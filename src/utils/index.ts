@@ -18,16 +18,7 @@ const getDate = () => {
   let str = d.getFullYear().toString() + _m + _dd;
   return str;
 }
-const substring = str => {
-  let _y: string = "",
-    _m: string = "",
-    _d: string = "";
-  _y = str.substring(0, 4);
-  _m = str.substring(4, 6);
-  _d = str.substring(6, 8);
-  return _y + "/" + _m + "/" + _d;
-}
 
 export {
-  getDate, substring
+  getDate
 }

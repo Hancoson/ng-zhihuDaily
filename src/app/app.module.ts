@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ElModule } from 'element-angular';
 
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -13,9 +14,12 @@ import { HomeComponent } from './components/home/home.component';
 import { appRoutes } from './route/route';
 import { ItemsComponent } from './components/items/items.component';
 
+import { SliceStrPipe } from '../pipe/slicestr.pipe'
+
 
 @NgModule({
   declarations: [
+    SliceStrPipe,
     AppComponent,
     NavComponent,
     FooterComponent,
@@ -23,9 +27,10 @@ import { ItemsComponent } from './components/items/items.component';
     ItemsComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     appRoutes,
-    HttpModule,
-    JsonpModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
     BrowserModule,
     ElModule.forRoot(),
   ],

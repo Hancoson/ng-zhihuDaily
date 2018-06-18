@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Jsonp, Response } from '@angular/http';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { ElMessageService } from 'element-angular'
 import Config from './../../constants/config';
 import * as utils from "./../../../utils/index";
 
@@ -11,17 +11,33 @@ import * as utils from "./../../../utils/index";
 })
 export class ItemsComponent implements OnInit {
   loading: boolean;
-  constructor(private jsonp: Jsonp) {
+  list: Array<any>;
+  time: string;
+  constructor(
+    private http: HttpClient,
+    private message: ElMessageService
+  ) {
     this.loading = true;
+    this.list = [];
+    this.time = ''
   }
 
   ngOnInit(): void {
+    const that = this;
     const url = Config.YAHOO + Config.API + utils.getDate() + Config.YAHOO_SUFFIX;
-    console.log(Config, this.jsonp, url)
 
-    this.jsonp.request(url).subscribe(res => {
-      console.log(res.json())
-    })
+    this.http.jsonp(url, 'callback').subscribe(
+      res => {
+        this.loading = false;
+        const data = res['query'].results
+        that.list = data.json.stories
+        that.time = res['query'].created
+        console.log(res)
+        that.message['error']('这是一条消息提示: ')
+      },
+      err => {
+        that.message['error']('这是一条消息提示:' + err)
+      })
   }
 
 

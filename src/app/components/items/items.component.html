@@ -1,3 +1,15 @@
 <div [el-loading]="loading" class="item-main">
-  <el-tag>加载中..</el-tag>
+  <div el-row class="items">
+    <div el-col class="item" span="4" *ngFor="let item of list" [offset]="item > 0 ? 6 : 0">
+      <el-card body-style="padding: 0px">
+        <img src="{{item.images}}">
+        <div style="padding: 14px;">
+          <p class="title">{{item.title|SliceStr: 0:20:'...'}}</p>
+          <div class="bottom clearfix">
+            <time class="time">{{time|date: 'dd/MM/yyyy'}}</time>
+          </div>
+        </div>
+      </el-card>
+    </div>
+  </div>
 </div>
