@@ -69,4 +69,53 @@ ng new {project-name} --style=scss
  },
 ```
 
+### 自定义管道
 
+- 新建管道文件（实现一个切割字符串）
+
+  ```ts
+  import { Pipe, PipeTransform } from '@angular/core'
+
+  @Pipe({
+    name: 'SliceStr'
+  })
+
+  export class SliceStrPipe implements PipeTransform {
+    // start和end及extraStr后面都跟随了一个问好，代表这个为可选参数而不是必选的
+    // 功能就是给出截图的启示，然后是否拼接你自定义的字符串(...)等
+    transform(value: string, start?: number, end?: number, extraStr?: string): string {
+      if (value) {
+        if (typeof (start) === 'number' && typeof (end) === 'number') {
+          if (value.length > end && extraStr && typeof (extraStr) === 'string') {
+            return value.slice(start, end) + extraStr.toString();
+          } else {
+            return value.slice(start, end);
+          }
+        } else {
+          return value;
+        }
+      } else {
+        return value;
+      }
+    }
+  }
+  ```
+
+- 引入
+
+  ```ts
+  import { SliceStrPipe } from '../pipe/slicestr.pipe'
+  // ...
+  @NgModule({
+    declarations: [
+      SliceStrPipe
+    ],
+    // ...
+  })
+  ```
+
+- 使用
+
+```html
+<p class="title">{{item.title|SliceStr: 0:20:'...'}}</p>
+```
