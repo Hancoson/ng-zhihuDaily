@@ -32,8 +32,6 @@ export class ItemsComponent implements OnInit {
         const data = res['query'].results
         that.list = data.json.stories
         that.time = res['query'].created
-        console.log(res)
-        that.message['error']('这是一条消息提示: ')
       },
       err => {
         that.message['error']('这是一条消息提示:' + err)
