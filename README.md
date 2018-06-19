@@ -116,6 +116,6 @@ ng new {project-name} --style=scss
 
 - 使用
 
-```html
-<p class="title">{{item.title|SliceStr: 0:20:'...'}}</p>
-```
+  ```html
+  <p class="title">{{item.title|SliceStr: 0:20:'...'}}</p>
+  ```
