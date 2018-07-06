@@ -34,7 +34,8 @@ export class ItemsComponent implements OnInit {
         that.time = res['query'].created
       },
       err => {
-        that.message['error']('这是一条消息提示:' + err)
+        console.log(err)
+        that.message['error']('这是一条消息提示:' + err.message)
       })
   }
 

@@ -1,6 +1,6 @@
 <div [el-loading]="loading" class="item-main">
   <div el-row class="items">
-    <div el-col class="item" span="4" *ngFor="let item of list" [offset]="item > 0 ? 6 : 0">
+    <a el-col class="item" span="4" *ngFor="let item of list" [offset]="item > 0 ? 6 : 0" routerLink="/detail/{{item.id}}">
       <el-card body-style="padding: 0px">
         <img src="{{item.images}}">
         <div style="padding: 14px;">
@@ -10,6 +10,6 @@
           </div>
         </div>
       </el-card>
-    </div>
+    </a>
   </div>
 </div>

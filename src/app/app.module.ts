@@ -14,7 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { appRoutes } from './route/route';
 import { ItemsComponent } from './components/items/items.component';
 
-import { SliceStrPipe } from '../pipe/slicestr.pipe'
+import { SliceStrPipe } from '../pipe/slicestr.pipe';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SliceStrPipe } from '../pipe/slicestr.pipe'
     NavComponent,
     FooterComponent,
     HomeComponent,
-    ItemsComponent
+    ItemsComponent,
+    DetailComponent
   ],
   imports: [
     BrowserAnimationsModule,
