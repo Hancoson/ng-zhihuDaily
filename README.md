@@ -2,6 +2,11 @@
 
 A angular zhihuDaily app!
 
+## 技术栈
+- [x] angular 6
+- [x] rxjs
+- [x] element-angular
+
 
 ## 使用
 
