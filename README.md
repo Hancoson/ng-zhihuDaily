@@ -1,4 +1,4 @@
-# NgZhihuDail
+# angular 实现的 知乎日报 App
 
 A angular zhihuDaily app!
 
