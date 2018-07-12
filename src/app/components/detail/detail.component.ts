@@ -8,7 +8,7 @@ import * as utils from "./../../../utils/index";
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss', './../../../assets/news_qa.auto.css']
+  styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
   urlParams: string;

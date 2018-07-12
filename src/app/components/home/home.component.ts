@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   values: string;
+  input: string;
   constructor() {
-    this.values = ''
+    this.values = '';
+    this.input = '';
   }
 
   ngOnInit() {

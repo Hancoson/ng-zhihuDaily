@@ -76,7 +76,9 @@ ng new {project-name} --style=scss
 
 ### 自定义管道
 
-- 新建管道文件（实现一个切割字符串）
+#### 切割字符串
+
+- 新建管道文件
 
   ```ts
   import { Pipe, PipeTransform } from '@angular/core'
@@ -123,4 +125,26 @@ ng new {project-name} --style=scss
 
   ```html
   <p class="title">{{item.title|SliceStr: 0:20:'...'}}</p>
+  ```
+
+#### innerHTML 设置 CSS 样式
+
+- 新建
+
+  ```ts
+  import { Pipe, PipeTransform } from "@angular/core";
+  import { DomSanitizer } from '@angular/platform-browser';
+
+  @Pipe({
+    name: 'safeHtml'
+  })
+
+  export class SafeHtmlPipe implements PipeTransform {
+    constructor(private sanitized: DomSanitizer) { }
+
+    transform(value) {
+      console.log(value)
+      return this.sanitized.bypassSecurityTrustHtml(value);
+    }
+  }
   ```
