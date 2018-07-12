@@ -2,6 +2,8 @@
 
 A angular zhihuDaily app!
 
+> [DEMO >>](https://hancoson.github.io/ng-zhihuDaily/dist/index.html)
+
 ## 技术栈
 - [x] angular 6
 - [x] rxjs
