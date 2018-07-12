@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
   urlParams: string;
   constructor(private router: ActivatedRoute) {
-    this.urlParams = this.router.params.value.id
+    this.urlParams = this.router.params['value'].id
   }
 
   ngOnInit() {
