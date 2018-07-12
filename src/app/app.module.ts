@@ -16,11 +16,12 @@ import { ItemsComponent } from './components/items/items.component';
 
 import { SliceStrPipe } from '../pipe/slicestr.pipe';
 import { DetailComponent } from './components/detail/detail.component';
-
+import { SafeHtmlPipe } from '../pipe/safeHtml.pipe';
 
 @NgModule({
   declarations: [
     SliceStrPipe,
+    SafeHtmlPipe,
     AppComponent,
     NavComponent,
     FooterComponent,
